@@ -47,10 +47,19 @@ export default {
     .btn { padding: 10px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; width: 100%; color: white; }
     .on { background: #52c41a; } .off { background: #ff4d4f; }
     .auto-mode { background: #e6f7ff; border: 1px solid #91d5ff; padding: 10px; border-radius: 5px; margin-top: 10px; }
+    .status-connected { color: #52c41a; }
+    .status-disconnected { color: #ff4d4f; }
+    .status-error { color: #faad14; }
   </style>
 </head>
 <body>
+
   <h2>ESP32 智能控制中心</h2>
+  
+    <div class="card" style="background: #f6ffed; border-left: 4px solid #52c41a;">
+    <h3>连接状态</h3>
+    <p>WebSocket: <span id="wsStatus" style="font-weight: bold; color: #ff4d4f;">⚫ 连接中...</span></p>
+  </div>
   
   <div class="card">
     <h3>环境监控与自动化开关</h3>
