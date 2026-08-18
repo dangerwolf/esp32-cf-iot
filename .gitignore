@@ -53,3 +53,17 @@ dkms.conf
 
 # debug information files
 *.dwo
+
+# Node 依赖与构建输出
+node_modules/
+.wrangler/
+dist/
+
+# 本地环境变量配置文件（千万不要提交到 GitHub）
+.dev.vars
+.env
+*.env
+
+# ESP32 / Arduino 编译文件
+firmware/**/build/
+firmware/**/libraries/
