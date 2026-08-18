@@ -83,22 +83,65 @@ void webSocketEvent(WStype_t type, uint8_t * payload, size_t length) {
     if (strcmp(action, "AUTO_OFF") == 0) autoControlMode = false;
 
     // 手动控制开关 LED
-    if (strcmp(action, "LED1_ON") == 0) setLED(0, true);
-    if (strcmp(action, "LED1_OFF") == 0) setLED(0, false);
-    if (strcmp(action, "LED2_ON") == 0) setLED(1, true);
-    if (strcmp(action, "LED2_OFF") == 0) setLED(1, false);
-    if (strcmp(action, "LED3_ON") == 0) setLED(2, true);
-    if (strcmp(action, "LED3_OFF") == 0) setLED(2, false);
+    if (strcmp(action, "LED1_ON") == 0) {
+      setLED(0, true);
+      notifyStateChange("LED1", true);  
+    }
+    if (strcmp(action, "LED1_OFF") == 0) {
+      setLED(0, false);
+      notifyStateChange("LED1", false);  
+    }
+    if (strcmp(action, "LED2_ON") == 0) {
+      setLED(1, true);
+      notifyStateChange("LED2", true);  
+    }
+    if (strcmp(action, "LED2_OFF") == 0) {
+      setLED(1, false);
+      notifyStateChange("LED2", false);  
+    }
+    if (strcmp(action, "LED3_ON") == 0) {
+      setLED(2, true);
+      notifyStateChange("LED3", true);  
+    }
+    if (strcmp(action, "LED3_OFF") == 0) {
+      setLED(2, false);
+      notifyStateChange("LED3", false);  
+    }
+
 
     // 手动控制 4 路继电器
-    if (strcmp(action, "R1_ON") == 0) setRelay(0, true);
-    if (strcmp(action, "R1_OFF") == 0) setRelay(0, false);
-    if (strcmp(action, "R2_ON") == 0) setRelay(1, true);
-    if (strcmp(action, "R2_OFF") == 0) setRelay(1, false);
-    if (strcmp(action, "R3_ON") == 0) setRelay(2, true);
-    if (strcmp(action, "R3_OFF") == 0) setRelay(2, false);
-    if (strcmp(action, "R4_ON") == 0) setRelay(3, true);
-    if (strcmp(action, "R4_OFF") == 0) setRelay(3, false);
+    if (strcmp(action, "R1_ON") == 0) {
+      setRelay(0, true);
+      notifyStateChange("R1", true);  
+    }
+    if (strcmp(action, "R1_OFF") == 0) {
+      setRelay(0, false);
+      notifyStateChange("R1", false);  
+    }
+    if (strcmp(action, "R2_ON") == 0) {
+      setRelay(1, true);
+      notifyStateChange("R2", true);  
+    }
+    if (strcmp(action, "R2_OFF") == 0) {
+      setRelay(1, false);
+      notifyStateChange("R2", false);  
+    }
+    if (strcmp(action, "R3_ON") == 0) {
+      setRelay(2, true);
+      notifyStateChange("R3", true);  
+    }
+    if (strcmp(action, "R3_OFF") == 0) {
+      setRelay(2, false);
+      notifyStateChange("R3", false);  
+    }
+    if (strcmp(action, "R4_ON") == 0) {
+      setRelay(3, true);
+      notifyStateChange("R4", true);  
+    }
+    if (strcmp(action, "R4_OFF") == 0) {
+      setRelay(3, false);
+      notifyStateChange("R4", false);  
+    }
   }
 }
 
