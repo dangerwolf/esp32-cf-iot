@@ -15,6 +15,9 @@
 - **LED 灯泡**：3 个 (接 GPIO 16, 17, 18)
 - **继电器模块**：4 路继电器 (接 GPIO 19, 21, 22, 23)
 
+<img width="1408" height="768" alt="Gemini_Generated_Image_prdkbdprdkbdprdk" src="https://github.com/user-attachments/assets/2001cbb0-5e54-441d-84ba-cd16cf3b96d0" />
+
+
 ---
 
 ## 项目结构
