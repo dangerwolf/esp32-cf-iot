@@ -92,7 +92,22 @@ export default {
     const secret = prompt("请输入环境变量 AUTH_SECRET (如未设置留空即可):") || "";
     const protocol = location.protocol === 'https:' ? 'wss://' : 'ws://';
     const ws = new WebSocket(protocol + location.host + '/ws?auth=' + secret);
+    
+    ws.onopen = () => {
+      document.getElementById('wsStatus').innerText = '✅ 已连接';
+      document.getElementById('wsStatus').className = 'status-connected';
+    };
 
+    ws.onclose = () => {
+      document.getElementById('wsStatus').innerText = '❌ 已断开';
+      document.getElementById('wsStatus').className = 'status-disconnected';
+    };
+
+    ws.onerror = () => {
+      document.getElementById('wsStatus').innerText = '⚠️ 连接错误';
+      document.getElementById('wsStatus').className = 'status-error';
+    };
+    
     ws.onmessage = (e) => {
       try {
         const data = JSON.parse(e.data);
