@@ -76,6 +76,10 @@ esp32-cf-iot/
 
 4. 点击 **Save and Deploy** 刷新 Worker。
 
+
+<img width="668" height="874" alt="image" src="https://github.com/user-attachments/assets/d0cc1d5c-65c1-497b-a882-00ca1a443ab1" />
+
+
 ---
 
 ### 2. ESP32 端烧录与配网
