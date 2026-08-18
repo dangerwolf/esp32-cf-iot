@@ -61,6 +61,15 @@ void handleAutoLogic(float temp, float humi) {
   }
 }
 
+void notifyStateChange(const char* device, bool state) {
+  StaticJsonDocument<128> doc;
+  doc["device"] = device;
+  doc["state"] = state;
+  String jsonString;
+  serializeJson(doc, jsonString);
+  webSocket.sendTXT(jsonString);
+}
+
 void webSocketEvent(WStype_t type, uint8_t * payload, size_t length) {
   if (type == WStype_TEXT) {
     StaticJsonDocument<200> doc;
