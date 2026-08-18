@@ -10,3 +10,18 @@ AUTO_LOGIC_DEFAULT = "true"
 # 提示：敏感信息（如 AUTH_SECRET）不要写在此文件里！
 # 部署后在 Cloudflare Dashboard -> Settings -> Variables 中添加，
 # 或通过命令行命令添加: npx wrangler secret put AUTH_SECRET
+
+[observability]
+enabled = false
+head_sampling_rate = 1
+
+[observability.logs]
+enabled = true
+head_sampling_rate = 1
+persist = true
+invocation_logs = true
+
+[observability.traces]
+enabled = false
+persist = true
+head_sampling_rate = 1
