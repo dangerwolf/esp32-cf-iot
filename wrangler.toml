@@ -1,6 +1,6 @@
 name = "esp32-cf-iot"
 main = "src/index.js"
-compatibility_date = "20264-08-18"
+compatibility_date = "2026-08-18"
 
 # 允许使用 WebSockets 长连接
 [vars]
